@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pas Loin Pas Cher !</title>
+    <link rel="stylesheet" th:href="@{/resa/accueil-style.css}">
+    <link rel="icon" href="../../static/resa/images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div id="logo"><img th:src="@{/resa/images/logo.png}" alt="" srcset=""></div>
+        <h1>Pas Loin Pas Cher !</h1>
+    </header>
+    <main>
+        <section id="agence">
+            <h2>L'agence</h2>
+            <p>L'agence <b>Pas Loin Pas Cher</b> propose des offres de voyages locaux et écologiques. Redécouvrez les merveilles de la France grâce à nos voyages sur mesure.</p>
+            <p>Nous avons été récompensé de nos efforts en matière de service et de voyage écologique par le <a href="https://www.ecologie.gouv.fr/">Ministère de la Transition Ecologique</a>.</p>
+        </section>
+        <section id="destination">
+            <h2>Sélection de destinations</h2>
+            <p>En cet automne 2022, nous vous proposons une sélection de visites dans le Sud-Ouest.</p>
+            <div class="img-carrousel">
+                <img th:src="@{/resa/images/Ardeches.png}" alt="" srcset="">
+                <img th:src="@{/resa/images/Canal_du_midi.png}" alt="" srcset="">
+                <img th:src="@{/resa/images/Foix.png}" alt="" srcset="">
+                <img th:src="@{/resa/images/Sarlat.jpeg}" alt="" srcset="">
+            </div>
+        </section>
+        <section id="equipe">
+            <h2>Notre équipe</h2>
+            <table>
+                <tr>
+                    <th colspan="2">Les employés de l'agence</th>
+                </tr>
+                <tr>
+                    <th>Directeur</th>
+                    <td>Lily Sackville-Baggins</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">Chargés de communication</th>
+                    <td>Fredrica Åström</td>
+                </tr>
+                <tr><td>Afaf Maysarah Salib</td></tr>
+                <tr>
+                    <th rowspan="3">Guides</th>
+                    <td>Trương Thị Túy Đoan</td>
+                </tr>
+                <tr><td>Ogier de Launay</td></tr>
+                <tr><td>Sota Nakajima (中嶋 颯太)</td></tr>
+            </table>
+        </section>
+        <section id="lieu">
+            <h2>Lieu et heures d'ouverture</h2>
+            <ul class="ville">
+                <li>
+                    <h3>Toulouse</h3>
+                    <ul>
+                        <li>Du lundi au jeudi, de 11h à 21h</li>
+                        <li>vendredi et samedi, de 11h à minuit</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Bordeau</h3>
+                    <ul>
+                        <li>Du mardi au jeudi, de 9h à 20h</li>
+                        <li>Vendredi et samedi, de 11h à 22h</li>
+                        <li>Dimanche, de 10h à 14h</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="reservation">
+            <h2>Réservation</h2>
+            <form name="reservationForm" onsubmit="valideForm(event)">
+                <table>
+                    <tr>
+                        <td><label for="nb-personne">Nombre de personnes :</label></td>
+                        <td><input type="number" name="nb-persone" id="nb-personne" min="0" required> (*)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="date">Date de réservation :</label></td>
+                        <td><input type="date" name="date" id="date" required> (*)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="opt-destination">Destination choisie :</label></td>
+                        <td>
+                            <select name="opt-destination" id="opt-destination" required>
+                                <option value="foix">Foix</option>
+                                <option value="sarlat">Sarlat</option>
+                                <option value="ardeches">Ardeches</option>
+                                <option value="canal-du-midi">Canal du Midi</option>
+                            </select> (*)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Vérifier la disponibilité" onclick="testDisponibilite()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nom">Nom :</label></td>
+                        <td><input type="text" name="nom" id="nom" required> (*)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Adresse e-mail :</label></td>
+                        <td><input type="email" name="email" id="email" required> (*)</td>
+                    </tr>
+                    <tr>
+                        <td>Moyen de paiement :</td>
+                        <td>
+                            <div>
+                                <label for="virement">Virement</label>
+                                <input onclick="afficherIBAN()" type="radio" name="virement" id="virement" value="virement" required>
+                                <label for="cheques">Chèques vacances</label>
+                                <input onclick="cacherIBAN()" type="radio" name="virement" id="cheques" value="cheques" required>
+                            </div>
+                            <label for="iban">IBAN :</label>
+                            <input type="text" name="iban" id="iban" placeholder="FR07 XXXX XXXX XXXX XXXX" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div>
+                                <input type="checkbox" name="promo" id="promo">
+                                <label for="promo">Je souhaite recevoir des offres promotionnelles</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="condition" id="condition" required>
+                                <label for="condition">J'ai lu les conditions générales de vente.</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Valider</button>
+                        </td>
+                        <td>
+                            <button type="reset">Reset</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Les informations suivies d'un astérisque sont obligatoires.</td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </main>
+    <footer>Copyright ©2042 | Agence Pas Loin Pas Cher (Pour me contacter: <a href="mailto:bastienbories81@gmail.com" >m'écrire</a> )</footer>
+</body>
+</html>
+<script th:src="@{/resa/accueil-script.js}"></script>

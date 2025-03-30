@@ -1,0 +1,60 @@
+html{
+    background-color: #E3B448;
+}
+
+body{
+    background-color: #cbd18f;
+    border: #3a6b35 solid 3px;
+    margin: 1% 10%;
+    padding: 2% 1%;
+    font-family: sans-serif;
+}
+
+header h1{
+    border-bottom: #3A6B35 solid 1px;
+    margin-top: 30px;
+}
+
+h1{
+    font-size: 2em;
+    font-family: serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+h2{
+    color: #3A6B35;
+    font-size: 1em;
+}
+
+header #logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#destination .img-carrousel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#destination .img-carrousel img{
+    width: 200px;
+    height: 200px;
+}
+
+#equipe table *{
+    border: black solid 2px;
+}
+
+#lieu .ville li{
+    font-weight: bolder;
+}
+
+footer{
+    color: gray;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
