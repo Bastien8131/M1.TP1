@@ -47,7 +47,7 @@ function valideForm(event){
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            window.location.href = "../../templates/resa/confirmation/index.html";
+            window.location.href = "resa/confirmation";
         })
         .catch((error) => {
             console.error('Error:', error);

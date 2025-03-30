@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
-  <title>Réservation</title>
+  <title>Liste des réservations</title>
+  <link rel="stylesheet" th:href="@{/resa/list/list-style.css}">
+  <link rel="icon" th:href="@{/resa/images/logo.png}" type="image/png">
 </head>
 <body>
+<header>
+  <div id="logo"><img th:src="@{/resa/images/logo.png}" alt="" srcset=""></div>
+  <h1>Pas Loin Pas Cher !</h1>
+</header>
 <main>
-  <h1>Page de réservation</h1>
+  <h1>Liste des réservations</h1>
+  <a th:href="@{/resa}">Retourner à l'accueil</a>
   <table>
     <thead>
     <tr>
@@ -35,5 +42,6 @@
     </tbody>
   </table>
 </main>
+<footer>Copyright ©2042 | Agence Pas Loin Pas Cher (Pour me contacter: <a href="mailto:bastienbories81@gmail.com" >m'écrire</a> )</footer>
 </body>
 </html>

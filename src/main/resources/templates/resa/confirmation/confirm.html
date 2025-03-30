@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation confirmée !</title>
+    <link rel="stylesheet" th:href="@{/resa/confirmation/confirm-style.css}">
+    <link rel="icon" th:href="@{/resa/images/logo.png}" type="image/png">
+</head>
+<body>
+<header>
+    <div id="logo"><img th:src="@{/resa/images/logo.png}" alt="" srcset=""></div>
+    <h1>Pas Loin Pas Cher !</h1>
+</header>
+<main>
+    <h2>Confirmation de Réservation</h2>
+    <p>
+        Merci pour votre réservation. Votre demande a été prise en compte.
+        Vous recevrez un e-mail de confirmation à l'adresse que vous avez fournie.
+    </p>
+    <p>Nous vous souhaitons un agréable voyage avec <b>Pas Loin Pas Cher</b> !</p>
+    <a th:href="@{/resa}">Retourner à l'accueil</a>
+    <a th:href="@{/resa/list}">Voir le liste des reservation</a>
+</main>
+<footer>Copyright ©2042 | Agence Pas Loin Pas Cher (Pour me contacter: <a href="mailto:bastienbories81@gmail.com" >m'écrire</a> )</footer>
+</body>
+</html>
+<script th:src="@{/resa/confirmation/confirm-script.js}"></script>

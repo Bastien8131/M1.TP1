@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/resa")
 public class ResaController {
-    static List<Reservation> reservations = new ArrayList<Reservation>();
+    static List<Reservation> reservations = new ArrayList<>();
 
     @GetMapping("")
     public String accueil(Model model) {
@@ -27,6 +27,11 @@ public class ResaController {
         System.out.println(reservation.toString());
         reservations.add(reservation);
         return ResponseEntity.ok(reservation);
+    }
+
+    @GetMapping("/confirmation")
+    public String confirm(Model model) {
+        return "resa/confirmation/confirm"; // Chemin vers le template
     }
 
     @GetMapping("/list")
